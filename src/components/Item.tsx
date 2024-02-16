@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
+
 export interface IItem {
   id: 1;
   title: string;
@@ -13,7 +16,9 @@ export default function Item({
   category,
   image,
   price,
-}: Omit<IItem, "id">) {
+  id,
+}: IItem) {
+  const { addToCart } = useContext(CartContext);
   return (
     <div className="flex w-96 shrink-0 flex-col items-center justify-center gap-4 rounded-2xl bg-card p-4">
       <img src={image} alt={title} className="size-64" />
@@ -23,7 +28,12 @@ export default function Item({
         <h3>{category}</h3>
         <h4>{price}$</h4>
       </div>
-      <button className="rounded-xl bg-primary px-10 py-2 text-xl">
+      <button
+        className="rounded-xl bg-primary px-10 py-2 text-xl"
+        onClick={() =>
+          addToCart({ category, description, id, image, price, title })
+        }
+      >
         Add To Cart
       </button>
     </div>
