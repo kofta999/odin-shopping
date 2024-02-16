@@ -4,7 +4,7 @@ import CartContext from "../context/CartContext";
 export interface IItem {
   id: 1;
   title: string;
-  price: string;
+  price: number;
   category: string;
   description: string;
   image: string;
@@ -20,7 +20,7 @@ export default function Item({
 }: IItem) {
   const { addToCart } = useContext(CartContext);
   return (
-    <div className="flex w-96 shrink-0 flex-col items-center justify-center gap-4 rounded-2xl bg-card p-4">
+    <div className="flex w-96 shrink-0 flex-col items-center justify-center gap-4 rounded-2xl bg-card p-4 shadow-xl">
       <img src={image} alt={title} className="size-64" />
       <h2 className="text-2xl">{title}</h2>
       <p className="mb-auto">{description}</p>
@@ -29,7 +29,7 @@ export default function Item({
         <h4>{price}$</h4>
       </div>
       <button
-        className="rounded-xl bg-primary px-10 py-2 text-xl"
+        className="bg-green-500 hover:bg-green-700 active:bg-green-900 text-white rounded-xl px-10 py-2 text-xl"
         onClick={() =>
           addToCart({ category, description, id, image, price, title })
         }

@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 :root {
-  @apply text-text bg-background;
+  @apply bg-background text-text;
+}
+
+button {
+  @apply shadow-lg transition-colors;
 }
