@@ -29,7 +29,7 @@ export default function Item({
         <h4>{price}$</h4>
       </div>
       <button
-        className="bg-green-500 hover:bg-green-700 active:bg-green-900 text-white rounded-xl px-10 py-2 text-xl"
+        className="rounded-xl bg-green-500 px-10 py-2 text-xl text-white hover:bg-green-700 active:bg-green-900"
         onClick={() =>
           addToCart({ category, description, id, image, price, title })
         }

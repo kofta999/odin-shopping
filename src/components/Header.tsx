@@ -6,7 +6,7 @@ export default function Header() {
   const { getCartCount } = useContext(CartContext);
   return (
     <nav className="flex items-center gap-20 p-4 text-2xl">
-      <Link className="mr-auto text-4xl" to="/">
+      <Link className="mr-auto text-4xl font-bold" to="/">
         Logo
       </Link>
       <Link to="/items">Items</Link>
