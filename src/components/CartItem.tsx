@@ -21,7 +21,7 @@ const QtyButton = ({
   return (
     <button
       onClick={() => qtyModifier(id)}
-      className="hover:bg-blue-700 active:bg-blue-900 active:text-white hover:text-white bg-blue-300 flex h-12 w-12 items-center justify-center rounded-full p-4 text-3xl font-light"
+      className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-300 p-4 text-3xl font-light hover:bg-blue-700 hover:text-white active:bg-blue-900 active:text-white"
     >
       {symbol}
     </button>
@@ -47,10 +47,10 @@ export default function CartItem({
         <QtyButton symbol="-" qtyModifier={decQty} id={id} />
       </div>
       <h2>
-        Total: $<span className="text-2xl">{price * qty}</span>
+        Total: $<span className="text-2xl">{(price * qty).toFixed(2)}</span>
       </h2>
       <button
-        className="bg-red-500 text-white hover:bg-red-700 active:bg-red-900 rounded-2xl"
+        className="rounded-2xl bg-red-500 text-white hover:bg-red-700 active:bg-red-900"
         onClick={() => removeFromCart(id)}
       >
         Remove From Cart

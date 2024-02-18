@@ -27,7 +27,9 @@ export default function CartProvider({ children }: PropsWithChildren) {
   const modifyQty = (itemId: number, amount: number) => {
     setCart((cart) =>
       cart.map((item) =>
-        item.id === itemId ? { ...item, qty: item.qty + amount } : item,
+        item.id === itemId
+          ? { ...item, qty: item.qty + amount >= 0 ? item.qty + amount : 0 }
+          : item,
       ),
     );
   };

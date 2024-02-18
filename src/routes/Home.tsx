@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className="mb-10 text-5xl">
         Welcome to <b>Logo</b>
       </h1>
-      <div className="mb-20 flex justify-between gap-10">
+      <div className="mb-20 flex justify-between items-center gap-10">
         <p className="w-1/2 text-3xl">
           Welcome to our online shop, your go-to source for top-quality products
           across various categories. We blend style, comfort, and innovation to

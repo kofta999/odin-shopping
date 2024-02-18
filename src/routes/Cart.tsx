@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import CartItem from "../components/CartItem";
+import Status from "../components/Status";
 
 export default function Cart() {
   const { cart, getCartCount, removeFromCart, incQty, decQty } =
@@ -25,13 +26,13 @@ export default function Cart() {
         })}
       </div>
       <div className="flex items-center justify-evenly">
-        <div className="text-4xl">Total Cost: ${totalCost}</div>
-        <button className="text-white bg-green-500 hover:bg-green-700 active:bg-green-900 rounded-2xl px-24 py-6 text-3xl">
+        <div className="text-4xl">Total Cost: ${totalCost.toFixed(2)}</div>
+        <button className="rounded-2xl bg-green-500 px-24 py-6 text-3xl text-white hover:bg-green-700 active:bg-green-900">
           Checkout
         </button>
       </div>
     </div>
   ) : (
-    <h1>No items in cart</h1>
+    <Status status="No items in cart" />
   );
 }
