@@ -10,6 +10,7 @@ interface ICartContext {
   getCartCount: () => number;
   incQty: (itemId: number) => void;
   decQty: (itemId: number) => void;
+  emptyCart: () => void;
 }
 
 const CartContext = createContext<ICartContext>({
@@ -19,6 +20,7 @@ const CartContext = createContext<ICartContext>({
   getCartCount: () => 0,
   incQty: () => {},
   decQty: () => {},
+  emptyCart: () => {},
 });
 
 export default CartContext;

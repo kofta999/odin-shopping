@@ -42,9 +42,21 @@ export default function CartProvider({ children }: PropsWithChildren) {
     modifyQty(itemId, -1);
   };
 
+  const emptyCart = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, getCartCount, decQty, incQty }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        getCartCount,
+        decQty,
+        incQty,
+        emptyCart,
+      }}
     >
       {children}
     </CartContext.Provider>

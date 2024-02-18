@@ -4,7 +4,7 @@ import CartItem from "../components/CartItem";
 import Status from "../components/Status";
 
 export default function Cart() {
-  const { cart, getCartCount, removeFromCart, incQty, decQty } =
+  const { cart, getCartCount, removeFromCart, incQty, decQty, emptyCart } =
     useContext(CartContext);
 
   let totalCost = 0;
@@ -27,7 +27,10 @@ export default function Cart() {
       </div>
       <div className="flex items-center justify-evenly">
         <div className="text-4xl">Total Cost: ${totalCost.toFixed(2)}</div>
-        <button className="rounded-2xl bg-green-500 px-24 py-6 text-3xl text-white hover:bg-green-700 active:bg-green-900">
+        <button
+          className="rounded-2xl bg-green-500 px-24 py-6 text-3xl text-white hover:bg-green-700 active:bg-green-900"
+          onClick={emptyCart}
+        >
           Checkout
         </button>
       </div>
